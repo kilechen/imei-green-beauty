@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>益美化工（IMEI） ― 台湾発・グリーンビューティー製造のご紹介</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1a3a2a;
+    --green: #2d7a54;
+    --green-light: #3d9b6e;
+    --green-pale: #e8f5ef;
+    --gold: #c9a84c;
+    --gold-light: #f5ecd4;
+    --text: #2c2c2c;
+    --text-mid: #555;
+    --text-light: #777;
+    --bg: #fafaf7;
+    --white: #ffffff;
+    --border: #e5e5e0;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+    color: var(--text); background: var(--bg); line-height: 1.9; font-size: 15px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(26,58,42,0.97); backdrop-filter: blur(8px);
+    padding: 14px 40px; display: flex; align-items: center; justify-content: space-between;
+  }
+  nav .logo {
+    color: var(--white); font-family: 'Inter', sans-serif;
+    font-weight: 700; font-size: 18px; letter-spacing: 1px;
+  }
+  nav .logo span { color: var(--gold); }
+  nav .nav-links { display: flex; gap: 24px; }
+  nav .nav-links a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 13px; font-weight: 500; transition: color 0.2s;
+  }
+  nav .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--forest) 0%, #1e4a35 40%, var(--green) 100%);
+    color: var(--white); padding: 100px 40px 80px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block; border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 22px; border-radius: 30px; font-size: 12px;
+    letter-spacing: 2px; margin-bottom: 28px; color: rgba(255,255,255,0.75);
+    font-family: 'Inter', sans-serif;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif; font-size: 42px; font-weight: 700;
+    line-height: 1.4; margin-bottom: 20px; max-width: 780px; margin-left: auto; margin-right: auto;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero .subtitle {
+    font-size: 16px; max-width: 600px; margin: 0 auto; opacity: 0.88; line-height: 2;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 920px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── SECTIONS ── */
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--green); font-weight: 600; margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif; font-size: 30px; font-weight: 700;
+    color: var(--forest); margin-bottom: 18px; line-height: 1.5;
+  }
+  .section-text {
+    font-size: 15px; color: var(--text-mid); max-width: 720px; line-height: 2; margin-bottom: 32px;
+  }
+
+  /* ── STATS ── */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0;
+  }
+  .stat {
+    text-align: center; padding: 28px 16px; background: var(--white);
+    border-radius: 14px; border: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: 'Inter', serif; font-size: 36px; font-weight: 700;
+    color: var(--green); line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: var(--text-light); margin-top: 8px; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 40px; margin-top: 36px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 14px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--green), var(--green-pale));
+  }
+  .timeline-item { position: relative; margin-bottom: 36px; }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -33px; top: 6px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--green); border: 3px solid var(--green-pale);
+  }
+  .timeline-item h4 {
+    font-size: 16px; font-weight: 600; color: var(--forest); margin-bottom: 6px;
+  }
+  .timeline-item p { font-size: 14px; color: var(--text-mid); line-height: 1.9; }
+
+  /* ── FEATURE CARDS ── */
+  .feature-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 36px;
+  }
+  .feature-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+    padding: 36px 30px; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.07);
+  }
+  .feature-icon {
+    width: 52px; height: 52px; border-radius: 14px; display: flex;
+    align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;
+  }
+  .feature-icon.green { background: var(--green-pale); }
+  .feature-icon.gold { background: var(--gold-light); }
+  .feature-card h3 { font-size: 17px; font-weight: 600; color: var(--forest); margin-bottom: 8px; }
+  .feature-card p { font-size: 14px; color: var(--text-mid); line-height: 1.85; }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--forest), #245a3f);
+    border-radius: 20px; padding: 48px 44px; color: var(--white); margin-top: 40px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  }
+  .highlight-box h3 {
+    font-family: 'Noto Serif JP', serif; font-size: 24px; margin-bottom: 14px; line-height: 1.6;
+  }
+  .highlight-box p { font-size: 14px; opacity: 0.9; line-height: 2; }
+  .highlight-box .hl-stats { display: flex; flex-direction: column; gap: 20px; }
+  .hl-stat {
+    background: rgba(255,255,255,0.1); border-radius: 12px; padding: 20px 24px;
+    border-left: 3px solid var(--gold);
+  }
+  .hl-stat strong { display: block; font-size: 18px; color: var(--gold); margin-bottom: 4px; }
+  .hl-stat span { font-size: 13px; opacity: 0.85; }
+
+  /* ── CIRCULAR BOX SECTION ── */
+  .circ-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; margin-top: 36px;
+  }
+  .circ-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+    padding: 28px 24px; text-align: center;
+  }
+  .circ-card .circ-icon {
+    width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center; font-size: 24px;
+    background: var(--green-pale);
+  }
+  .circ-card h4 { font-size: 15px; font-weight: 600; color: var(--forest); margin-bottom: 6px; }
+  .circ-card p { font-size: 13px; color: var(--text-mid); line-height: 1.8; }
+
+  /* ── FLOW DIAGRAM ── */
+  .flow {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; margin: 40px 0; flex-wrap: wrap;
+  }
+  .flow-step {
+    background: var(--green-pale); border-radius: 12px; padding: 18px 22px;
+    text-align: center; min-width: 140px;
+  }
+  .flow-step strong { display: block; font-size: 13px; color: var(--forest); margin-bottom: 2px; }
+  .flow-step span { font-size: 11px; color: var(--text-mid); }
+  .flow-arrow { font-size: 22px; color: var(--green); padding: 0 10px; }
+
+  /* ── WHY SECTION ── */
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px;
+  }
+  .why-card { padding: 32px 24px; border-radius: 14px; text-align: center; }
+  .why-card.econ { background: #f0faf4; }
+  .why-card.social { background: #f5f0e8; }
+  .why-card.env { background: #eef6fb; }
+  .why-card h4 { font-size: 15px; font-weight: 600; color: var(--forest); margin: 12px 0 8px; }
+  .why-card p { font-size: 13px; color: var(--text-mid); line-height: 1.8; }
+  .why-icon { font-size: 32px; }
+
+  /* ── CTA ── */
+  .cta {
+    background: linear-gradient(135deg, var(--forest), #2a5a45);
+    color: var(--white); text-align: center; padding: 64px 40px;
+  }
+  .cta h2 { font-family: 'Noto Serif JP', serif; font-size: 30px; margin-bottom: 16px; line-height: 1.5; }
+  .cta p { font-size: 15px; opacity: 0.88; margin-bottom: 8px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 2; }
+  .cta .contact { margin-top: 28px; font-size: 16px; font-weight: 500; line-height: 2; }
+  .cta .contact a { color: var(--gold); text-decoration: none; }
+  .cta .contact-sub { font-size: 13px; opacity: 0.7; margin-top: 4px; }
+
+  /* ── ALLIANCE ── */
+  .alliance-bar {
+    display: flex; align-items: center; justify-content: center; gap: 32px;
+    flex-wrap: wrap; margin-top: 32px; padding: 24px; background: var(--white);
+    border-radius: 14px; border: 1px solid var(--border);
+  }
+  .alliance-item { text-align: center; font-size: 12px; color: var(--text-mid); font-weight: 500; }
+  .alliance-item .a-icon { font-size: 28px; margin-bottom: 4px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    nav .nav-links { gap: 14px; }
+    nav .nav-links a { font-size: 11px; }
+    .hero { padding: 60px 24px 50px; }
+    .hero h1 { font-size: 28px; }
+    .container { padding: 0 24px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .feature-row { grid-template-columns: 1fr; }
+    .highlight-box { grid-template-columns: 1fr; padding: 32px 28px; }
+    .circ-grid { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+    .why-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">益美 <span>化工</span></div>
+  <div class="nav-links">
+    <a href="#about">会社紹介</a>
+    <a href="#why-green">グリーン戦略</a>
+    <a href="#pineapple">パイナップル葉</a>
+    <a href="#circular-box">循環ボックス</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">BNI TAIWAN 2026</div>
+  <h1>台湾発、<em>創業70年</em>のものづくり精神で挑む<br>グリーンビューティー製造</h1>
+  <p class="subtitle">家族経営の化粧品工場から、サステナブル製造のパートナーへ。農業副産物をスキンケア原料に、使い捨て包装を循環型システムに変える取り組みをご紹介いたします。</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">WHO WE ARE</div>
+    <div class="section-title">三代にわたる美のものづくり</div>
+    <div class="section-text">
+      益美化工（IMEI）は、70年以上前に創業者が台湾市場の輸入品依存に疑問を持ち、自ら化粧品の開発・製造を始めたことに端を発します。台湾初の国産化粧品ブランド「美爽爽」を生み出し、全国600店以上の販売網を築きました。三代目の現CEO・陳威宙（Kile Chen）のもと、OEM専業からサステナビリティを軸としたODM/OBMメーカーへと進化を遂げ、スキンケア、日焼け止め、ベースメイク、パーソナルケアを専門としております。
+    </div>
+    <div class="section-text">
+      私たちの使命は明確です。長年培ってきた処方技術とグリーンイノベーションを融合させ、より持続可能な美容産業を共に築くこと。化粧品製造は、品質を高めながらも環境負荷を減らすことができると信じています。
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">70+</div>
+        <div class="stat-label">年の歴史</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3代目</div>
+        <div class="stat-label">経営者</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">GMP</div>
+        <div class="stat-label">認証取得工場</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">ODM</div>
+        <div class="stat-label">フルサービス対応</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>1950年代 ― 創業</h4>
+        <p>薬剤師の見習いであった創業者が、台湾で化粧品の自主開発・製造を開始。やがて「美爽爽」ブランドを立ち上げ、全国600店舗以上に展開する国民的ブランドに成長しました。</p>
+      </div>
+      <div class="timeline-item">
+        <h4>1980〜90年代 ― 海外展開</h4>
+        <p>二代目の経営のもと、海外有名ブランドのOEM契約を獲得。アジア各国への輸出市場を拡大し、製造力の基盤を固めました。</p>
+      </div>
+      <div class="timeline-item">
+        <h4>2010年代 ― 経営革新</h4>
+        <p>PwC出身の三代目・陳威宙が経営を継承。ERPシステムの導入、デジタル化の推進、そしてOEM専業からフルサービスODMへの戦略的転換を実行しました。</p>
+      </div>
+      <div class="timeline-item">
+        <h4>2020年代 ― グリーン・サステナビリティ</h4>
+        <p>GreenAct Lab（グリーン実験室）を設立。台湾工業技術研究院（ITRI）とパイナップル葉由来原料の共同開発、スマート循環ボックスの導入、カーボンインベントリの実施、再生可能エネルギーの活用を開始しました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GREEN -->
+<section id="why-green">
+  <div class="container">
+    <div class="section-label">OUR DIRECTION</div>
+    <div class="section-title">なぜ今、グリーン製造なのか</div>
+    <div class="section-text">
+      化粧品業界は毎年膨大なプラスチック包装廃棄物を排出しており、リサイクル率は10%を下回っています。世界的にESG要件は厳格化の一途をたどり、サプライチェーンの透明性はもはや選択肢ではなく必須条件です。益美化工は、規制に追われるのではなく、自ら先導する道を選びました。
+    </div>
+    <div class="section-text">
+      陳威宙はこう述べています。「デジタルトランスフォーメーション、グリーン・サステナビリティ、そして技術の深耕。この三本柱を同時に構築できるメーカーだけが、これからの時代に生き残れると考えています。」
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card econ">
+        <div class="why-icon">📉</div>
+        <h4>経済的価値</h4>
+        <p>包装・物流コストの削減。差別化されたポジショニングにより、ブランドパートナーにプレミアムな価値を提供します。</p>
+      </div>
+      <div class="why-card social">
+        <div class="why-icon">🤝</div>
+        <h4>社会的価値</h4>
+        <p>サプライチェーン全体の責任意識を向上。ブランドに対し、消費者の共感を得られる定量的なグリーンアクションを提供します。</p>
+      </div>
+      <div class="why-card env">
+        <div class="why-icon">🌍</div>
+        <h4>環境的価値</h4>
+        <p>物流における使い捨てプラスチックの排除。サプライチェーン全体のカーボンフットプリント削減に貢献します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PINEAPPLE LEAF -->
+<section id="pineapple">
+  <div class="container">
+    <div class="section-label">SUSTAINABLE INGREDIENTS</div>
+    <div class="section-title">パイナップル葉エキス ― 農業廃棄物からスキンケア原料へ</div>
+    <div class="section-text">
+      台湾工業技術研究院（ITRI）との共同研究により、収穫後に通常廃棄・焼却されるパイナップルの葉から、生理活性成分を抽出する技術を開発しました。このアップサイクル原料は、現在洗顔料やスキンケア製品の処方に活用されています。
+    </div>
+
+    <div class="highlight-box">
+      <div>
+        <h3>農業廃棄物を美容イノベーションに変える</h3>
+        <p>台湾では年間40万トン以上のパイナップルが生産されていますが、収穫後の葉は焼却や放置が一般的で、大気汚染やバイオマスの無駄につながっていました。私たちの抽出技術は、これらの葉から有用成分を回収し、ブランドがお客様に自信を持って語れる真のサーキュラー原料ストーリーを実現します。</p>
+        <p style="margin-top:16px; opacity:0.8; font-size:13px;">台湾経済部補助事業「パイナップル副産物スキンケア原料パイロット生産」の支援を受けています。</p>
+      </div>
+      <div class="hl-stats">
+        <div class="hl-stat">
+          <strong>アップサイクル原料</strong>
+          <span>台湾農家で廃棄されていたパイナップルの葉を活用</span>
+        </div>
+        <div class="hl-stat">
+          <strong>ITRI共同開発</strong>
+          <span>台湾最高峰の公的研究機関との共同R&amp;D</span>
+        </div>
+        <div class="hl-stat">
+          <strong>製品応用</strong>
+          <span>洗顔料、美容液、スキンケア処方に展開</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row" style="margin-top:36px;">
+      <div class="feature-card">
+        <div class="feature-icon green">🍍</div>
+        <h3>地産原料、世界品質</h3>
+        <p>台湾のパイナップル農家から原料を調達することで、地域農業を支えながら、国際市場でブランドを差別化できるストーリー性のある独自原料を創出しています。まさに「畑から肌へ」の物語です。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon gold">🔬</div>
+        <h3>実証済みのR&amp;Dパイプライン</h3>
+        <p>ITRIとのパートナーシップを通じて、さらなる地域由来のボタニカル原料の探索を続けています。パイナップル葉は最初の成功事例であり、次世代のアップサイクル原料の開発を進めています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIRCULAR BOX -->
+<section id="circular-box">
+  <div class="container">
+    <div class="section-label">CIRCULAR ECONOMY IN ACTION</div>
+    <div class="section-title">スマート循環ボックス ― 美容業界の物流を変える</div>
+    <div class="section-text">
+      化粧品業界のサプライチェーンは、使い捨ての段ボールやプラスチック包装に依存しています。原料サプライヤー、製造工場、ブランドオーナー間の出荷のたびに廃棄物が発生し、最終的には埋立地に行き着きます。私たちのスマート循環ボックスは、化粧品サプライチェーン専用に設計されたIoT対応の再利用型輸送コンテナです。
+    </div>
+
+    <div class="flow">
+      <div class="flow-step">
+        <strong>原料サプライヤー</strong>
+        <span>原料を出荷</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <strong>IMEI工場</strong>
+        <span>製品を製造</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">
+        <strong>ブランド / 倉庫</strong>
+        <span>完成品を受領</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step" style="background: var(--gold-light);">
+        <strong>回収・再利用</strong>
+        <span>洗浄後、再び循環</span>
+      </div>
+    </div>
+
+    <div class="circ-grid">
+      <div class="circ-card">
+        <div class="circ-icon">📡</div>
+        <h4>IoT &amp; RFIDトラッキング</h4>
+        <p>各ボックスにデジタルセンサータグを搭載。出荷日時、製品情報、包装の流れを記録し、ESGレポートに必要な完全なトレーサビリティを実現します。</p>
+      </div>
+      <div class="circ-card">
+        <div class="circ-icon">♻️</div>
+        <h4>クローズドループ再利用</h4>
+        <p>ボックスは回収後、洗浄・分別され、再び物流に投入されます。サプライチェーンパートナー間の使い捨て段ボール廃棄物を排除します。</p>
+      </div>
+      <div class="circ-card">
+        <div class="circ-icon">📊</div>
+        <h4>データドリブン最適化</h4>
+        <p>AI分析により包装回収率と物流スケジューリングを最適化。将来的には出荷ごとのCO2排出量トラッキング機能も実装予定です。</p>
+      </div>
+    </div>
+
+    <div class="feature-row" style="margin-top:28px;">
+      <div class="feature-card">
+        <div class="feature-icon green">🏷️</div>
+        <h3>ブランドオーナー様へ</h3>
+        <p>デジタル追跡記録により、消費者に向けた検証済みのグリーンプロヴナンスを提供。包装コストの削減と、企業ESGレポートやマーケティングに活用できる具体的なサステナビリティ施策を実現します。</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon gold">🏭</div>
+        <h3>サプライヤー・物流企業様へ</h3>
+        <p>包装数量と使用状況の精密な在庫管理。破損や倉庫負荷の低減。使い捨て輸送資材や印刷ラベルの廃止による運営コストの削減を実現します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GREENACT LAB -->
+<section>
+  <div class="container">
+    <div class="section-label">THE ALLIANCE</div>
+    <div class="section-title">GreenAct Lab ― グリーンサプライチェーン・アライアンス</div>
+    <div class="section-text">
+      サステナビリティは一社では実現できません。GreenAct Labは、美容サプライチェーンのすべてのプレイヤーを結集し、真の循環型エコシステムを構築するための協働プラットフォームです。原料サプライヤーから包装メーカー、デザインパートナーからグリーンエネルギー事業者まで、ゼロウェイスト美容製造を実現するチームを組成しています。
+    </div>
+
+    <div class="alliance-bar">
+      <div class="alliance-item"><div class="a-icon">🏭</div>益美化工（IMEI）<br><small>製造・サプライチェーン統括</small></div>
+      <div class="alliance-item"><div class="a-icon">🎨</div>5% Design Action<br><small>デザイン・イノベーション</small></div>
+      <div class="alliance-item"><div class="a-icon">🧴</div>原料サプライヤー<br><small>サステナブル原料</small></div>
+      <div class="alliance-item"><div class="a-icon">📦</div>包装パートナー<br><small>循環型・エコ包装</small></div>
+      <div class="alliance-item"><div class="a-icon">💻</div>ソフトウェア &amp; IoT<br><small>データ &amp; アナリティクス</small></div>
+      <div class="alliance-item"><div class="a-icon">⚡</div>グリーンエネルギー<br><small>再生可能エネルギー</small></div>
+    </div>
+
+    <div class="section-text" style="margin-top:32px;">
+      私たちの目標は、生産から消費までの完全なグリーンサプライチェーンを構築し、美容業界の新たなスタンダードを打ち立てることです。このビジョンを共有し、次のフェーズに共に取り組んでいただける国際パートナーを積極的に求めています。
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta" id="contact">
+  <h2>共に、グリーンビューティーの<br>未来を築きましょう</h2>
+  <p>サステナブルな製造パートナーをお探しのブランド様、環境配慮型の製品ラインをお求めの小売企業様、サプライチェーン革新に取り組む企業様、ぜひお気軽にご連絡ください。</p>
+  <div class="contact">
+    陳 威宙（Kile Chen）<br>
+    代表取締役 / 三代目オーナー<br>
+    益美化工實業股份有限公司（IMEI Chemical Enterprise Ltd.）<br>
+    台湾<br>
+    <a href="mailto:imei.kilechen@gmail.com">imei.kilechen@gmail.com</a>
+  </div>
+  <div class="contact-sub">BNI TAIWAN 2026</div>
+</div>
+
+</body>
+</html>

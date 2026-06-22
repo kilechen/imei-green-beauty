@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMEI Chemical Enterprise — BNI Convention Materials</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1a3a2a;
+    --green: #2d7a54;
+    --green-pale: #e8f5ef;
+    --gold: #c9a84c;
+    --text: #2c2c2c;
+    --text-mid: #555;
+    --bg: #fafaf7;
+    --white: #fff;
+    --border: #e5e5e0;
+  }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; }
+  .container { max-width: 720px; width: 100%; }
+  .header { text-align: center; margin-bottom: 48px; }
+  .badge { display: inline-block; border: 1px solid var(--border); padding: 5px 18px; border-radius: 30px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 20px; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--forest); line-height: 1.2; margin-bottom: 12px; }
+  .subtitle { font-size: 16px; color: var(--text-mid); }
+  .cards { display: grid; gap: 16px; }
+  .card {
+    display: block; background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+    padding: 28px 28px; text-decoration: none; color: var(--text);
+    transition: all 0.2s ease; position: relative; overflow: hidden;
+  }
+  .card:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .card .lang { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); font-weight: 600; margin-bottom: 6px; }
+  .card h2 { font-size: 20px; font-weight: 600; color: var(--forest); margin-bottom: 6px; }
+  .card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+  .card .arrow { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 20px; color: var(--green); opacity: 0; transition: opacity 0.2s; }
+  .card:hover .arrow { opacity: 1; }
+  .footer { text-align: center; margin-top: 48px; font-size: 13px; color: var(--text-mid); line-height: 1.8; }
+  .footer a { color: var(--gold); text-decoration: none; }
+  @media (max-width: 600px) { h1 { font-size: 28px; } .card { padding: 20px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="badge">BNI Convention 2026</div>
+    <h1>IMEI Chemical Enterprise</h1>
+    <p class="subtitle">Green Beauty Manufacturing from Taiwan since 1955</p>
+  </div>
+  <div class="cards">
+    <a class="card" href="IMEI_SelfIntro_v1.html">
+      <div class="lang">English</div>
+      <h2>Self Introduction & Capabilities</h2>
+      <p>Who we are, what we make, and how we can partner with your brand.</p>
+      <span class="arrow">&rarr;</span>
+    </a>
+    <a class="card" href="IMEI_GreenSustainability_v1.html">
+      <div class="lang">English</div>
+      <h2>Green Sustainability — Full Version</h2>
+      <p>Comprehensive overview of our green beauty manufacturing initiatives.</p>
+      <span class="arrow">&rarr;</span>
+    </a>
+    <a class="card" href="IMEI_GreenSustainability_v2.html">
+      <div class="lang">English</div>
+      <h2>Green Sustainability — Quick Overview</h2>
+      <p>5-page simplified version: who, why, pineapple leaf, circular box, contact.</p>
+      <span class="arrow">&rarr;</span>
+    </a>
+    <a class="card" href="IMEI_GreenSustainability_JP_v1.html">
+      <div class="lang">Japanese / 日本語</div>
+      <h2>Green Sustainability — Japan Edition</h2>
+      <p>日本市場向けにローカライズしたグリーンビューティー紹介ページ</p>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </div>
+  <div class="footer">
+    Kile Chen / CEO & 3rd-Generation Owner<br>
+    益美化工實業股份有限公司（IMEI Chemical Enterprise Ltd.）<br>
+    <a href="mailto:imei.kilechen@gmail.com">imei.kilechen@gmail.com</a>
+  </div>
+</div>
+</body>
+</html>

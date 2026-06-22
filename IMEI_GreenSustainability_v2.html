@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMEI Cosmetics — Green Beauty Manufacturing</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1a3a2a;
+    --green: #2d7a54;
+    --green-pale: #e8f5ef;
+    --gold: #c9a84c;
+    --gold-light: #f5ecd4;
+    --text: #2c2c2c;
+    --text-mid: #555;
+    --bg: #fafaf7;
+    --white: #fff;
+    --border: #e5e5e0;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; }
+
+  /* PAGE */
+  .page {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 60px 40px; max-width: 900px; margin: 0 auto;
+  }
+  .page + .page { border-top: 1px solid var(--border); }
+  .page-num {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--green); font-weight: 600; margin-bottom: 16px;
+  }
+  .page h2 {
+    font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700;
+    color: var(--forest); line-height: 1.25; margin-bottom: 20px;
+  }
+  .page h2 em { color: var(--gold); font-style: italic; }
+  .page .lead {
+    font-size: 17px; color: var(--text-mid); max-width: 680px; line-height: 1.85;
+  }
+
+  /* HERO (Page 1) */
+  .hero {
+    background: linear-gradient(160deg, var(--forest) 0%, #1e4a35 50%, var(--green) 100%);
+    color: var(--white); text-align: center; padding: 100px 40px 80px;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .hero-badge {
+    display: inline-block; border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 22px; border-radius: 30px; font-size: 12px;
+    letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 32px; color: rgba(255,255,255,0.7);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: 50px; font-weight: 700;
+    line-height: 1.15; margin-bottom: 24px; max-width: 720px;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero p { font-size: 18px; max-width: 560px; opacity: 0.88; line-height: 1.8; }
+  .hero-stats {
+    display: flex; gap: 48px; margin-top: 48px;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--gold);
+  }
+  .hero-stat .label { font-size: 13px; opacity: 0.7; margin-top: 4px; }
+
+  /* TWO-COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 36px; }
+  .col-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 32px 28px;
+  }
+  .col-card .icon { font-size: 32px; margin-bottom: 12px; }
+  .col-card h3 { font-size: 18px; font-weight: 600; color: var(--forest); margin-bottom: 8px; }
+  .col-card p { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+  /* FLOW */
+  .flow {
+    display: flex; align-items: center; justify-content: center; gap: 0;
+    margin: 36px 0; flex-wrap: wrap;
+  }
+  .flow-step {
+    background: var(--green-pale); border-radius: 12px; padding: 16px 20px; text-align: center;
+  }
+  .flow-step strong { display: block; font-size: 14px; color: var(--forest); }
+  .flow-step span { font-size: 12px; color: var(--text-mid); }
+  .flow-step.highlight { background: var(--gold-light); }
+  .flow-arrow { font-size: 20px; color: var(--green); padding: 0 10px; }
+
+  /* HIGHLIGHT */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--forest), #245a3f);
+    border-radius: 18px; padding: 40px 36px; color: var(--white); margin-top: 36px;
+  }
+  .highlight-box h3 {
+    font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 12px;
+  }
+  .highlight-box p { font-size: 15px; opacity: 0.9; line-height: 1.8; }
+  .hl-pills { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+  .hl-pill {
+    background: rgba(255,255,255,0.12); border-radius: 8px; padding: 12px 18px;
+    font-size: 14px; border-left: 3px solid var(--gold);
+  }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--forest), #2a5a45);
+    color: var(--white); text-align: center; padding: 80px 40px;
+    min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .cta h2 { font-family: 'Playfair Display', serif; font-size: 34px; margin-bottom: 16px; }
+  .cta p { font-size: 16px; opacity: 0.85; max-width: 480px; line-height: 1.8; }
+  .cta .contact { margin-top: 32px; font-size: 18px; font-weight: 500; line-height: 1.8; }
+  .cta .contact a { color: var(--gold); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .hero { padding: 60px 24px; }
+    .hero-stats { gap: 24px; }
+    .hero-stat .num { font-size: 32px; }
+    .page { padding: 48px 24px; }
+    .page h2 { font-size: 28px; }
+    .two-col { grid-template-columns: 1fr; gap: 20px; }
+    .flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: WHO WE ARE -->
+<div class="hero">
+  <div class="hero-badge">BNI US &amp; Canada Convention 2026</div>
+  <h1>IMEI Cosmetics — <em>Green Beauty</em> from Taiwan</h1>
+  <p>A 70-year, 3rd-generation cosmetics manufacturer. We make skincare, sun care, and base makeup — and we're turning our entire operation green.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">70+</div><div class="label">Years</div></div>
+    <div class="hero-stat"><div class="num">3rd</div><div class="label">Generation</div></div>
+    <div class="hero-stat"><div class="num">GMP</div><div class="label">Certified</div></div>
+    <div class="hero-stat"><div class="num">ODM</div><div class="label">Full Service</div></div>
+  </div>
+</div>
+
+<!-- PAGE 2: WHY GREEN -->
+<div class="page">
+  <div class="page-num">Our Why</div>
+  <h2>Beauty Shouldn't Cost <em>the Earth</em></h2>
+  <p class="lead">
+    The cosmetics industry generates massive packaging waste with recycling rates below 10%. ESG pressure is rising everywhere. We decided not to wait — we're building green manufacturing into everything we do, from the ingredients we source to the boxes we ship in.
+  </p>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="icon">🌿</div>
+      <h3>Sustainable Ingredients</h3>
+      <p>Upcycling agricultural waste into skincare actives. Starting with pineapple leaf extract, developed with Taiwan's top research institute.</p>
+    </div>
+    <div class="col-card">
+      <div class="icon">♻️</div>
+      <h3>Circular Logistics</h3>
+      <p>Replacing single-use cardboard with smart, reusable shipping boxes across our supply chain. Tracked by IoT, reused dozens of times.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: PINEAPPLE LEAF -->
+<div class="page">
+  <div class="page-num">Initiative 01</div>
+  <h2>Pineapple Leaf Extract — <em>Farm Waste to Face Care</em></h2>
+  <p class="lead">
+    Taiwan grows over 400,000 tons of pineapple a year. The leaves? Usually burned. We partnered with ITRI (Taiwan's Industrial Technology Research Institute) to extract skincare-grade actives from those leaves. Now they go into cleansers and serums instead of smoke.
+  </p>
+  <div class="highlight-box">
+    <h3>A real circular ingredient story your brand can tell.</h3>
+    <p>This isn't a marketing angle — it's a verified, government-backed R&amp;D program. We're actively developing more upcycled botanicals from local agriculture.</p>
+    <div class="hl-pills">
+      <div class="hl-pill">🍍 Upcycled from farm waste</div>
+      <div class="hl-pill">🔬 ITRI co-developed</div>
+      <div class="hl-pill">🧴 Ready for formulation</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 4: CIRCULAR BOX -->
+<div class="page">
+  <div class="page-num">Initiative 02</div>
+  <h2>Smart Circular Box — <em>Zero-Waste Shipping</em></h2>
+  <p class="lead">
+    Every shipment between suppliers, our factory, and brand clients used to mean disposable cardboard. Our Smart Circular Box replaces that with a reusable, IoT-tracked container. It gets shipped, received, returned, cleaned, and used again.
+  </p>
+  <div class="flow">
+    <div class="flow-step"><strong>Supplier</strong><span>Ships materials</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><strong>IMEI Factory</strong><span>Manufactures</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><strong>Brand Client</strong><span>Receives goods</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step highlight"><strong>Return &amp; Reuse</strong><span>Cleaned, tracked</span></div>
+  </div>
+  <div class="two-col">
+    <div class="col-card">
+      <div class="icon">📡</div>
+      <h3>IoT + RFID Tracked</h3>
+      <p>Every box logs shipment time, contents, and flow direction. Full data for your ESG reports — automatically.</p>
+    </div>
+    <div class="col-card">
+      <div class="icon">💰</div>
+      <h3>Saves Money Too</h3>
+      <p>Lower packaging procurement costs. Less warehouse waste. Fewer printed labels. Sustainability that pays for itself.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 5: LET'S CONNECT -->
+<div class="cta">
+  <h2>Let's Build Greener Beauty Together</h2>
+  <p>Looking for a manufacturing partner that takes sustainability seriously — not just in marketing, but in how we actually make things? Let's talk.</p>
+  <div class="contact">
+    Wayne Chen<br>
+    CEO &amp; 3rd-Generation Owner<br>
+    IMEI Cosmetics (益美化工實業)<br>
+    Taiwan<br><br>
+    <a href="mailto:wccnopenclaw@gmail.com">wccnopenclaw@gmail.com</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMEI Cosmetics — Your Formulation Partner from Taiwan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a2a;
+    --accent: #3d8b6e;
+    --accent-light: #e8f5ef;
+    --gold: #c9a84c;
+    --text: #2c2c2c;
+    --text-light: #666;
+    --bg: #fafaf7;
+    --white: #ffffff;
+    --border: #e5e5e0;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #2a5a45 60%, var(--accent) 100%);
+    color: var(--white);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.85);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    font-size: 18px;
+    max-width: 640px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.7;
+  }
+
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Section */
+  section {
+    padding: 60px 0;
+  }
+  section + section {
+    border-top: 1px solid var(--border);
+  }
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  .section-text {
+    font-size: 16px;
+    color: var(--text-light);
+    max-width: 720px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  /* Cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary);
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* Stats row */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 40px 0;
+  }
+  .stat {
+    text-align: center;
+    padding: 24px 16px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 8px;
+  }
+
+  /* Needs / Looking For */
+  .needs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .need-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 24px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .need-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 18px;
+  }
+  .need-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--primary);
+  }
+  .need-item p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--primary), #2a5a45);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 40px;
+    margin-top: 20px;
+  }
+  .cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+  }
+  .cta .contact-line {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  .cta .contact-line a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  /* Product list */
+  .product-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .product-tag {
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .hero { padding: 60px 24px 40px; }
+    .container { padding: 0 24px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .needs-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<div class="hero">
+  <div class="hero-badge">BNI US &amp; Canada Convention 2026</div>
+  <h1>IMEI Cosmetics — <span>70+ Years</span> of Beauty Manufacturing Excellence</h1>
+  <p>Taiwan's trusted ODM/OBM partner for skincare, sun care, base makeup, and personal care. Formulated for performance in the world's most demanding climates.</p>
+</div>
+
+<!-- Who We Are -->
+<section>
+  <div class="container">
+    <div class="section-label">Who We Are</div>
+    <div class="section-title">A Heritage Manufacturer Built for Today's Market</div>
+    <div class="section-text">
+      IMEI Cosmetics (益美化工) is a Taiwan-based beauty manufacturer with over 70 years of formulation and production expertise. We specialize in ODM and OBM services, helping brands bring high-performance products to market — from concept to shelf-ready delivery. Our strength lies in formulations designed for hot, humid, and subtropical climates, where product stability, skin feel, and long-wear performance truly matter.
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">70+</div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Formulations Developed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">GMP</div>
+        <div class="stat-label">Certified Facility</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Capabilities -->
+<section>
+  <div class="container">
+    <div class="section-label">Core Capabilities</div>
+    <div class="section-title">What We Do Best</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🧪</div>
+        <h3>Custom Formulation</h3>
+        <p>Tailored R&amp;D for skincare, sun care, base makeup, and personal care. We develop formulas that perform in high-heat, high-humidity conditions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏭</div>
+        <h3>Full-Scale Manufacturing</h3>
+        <p>From lab bench to production line. GMP-certified facility with flexible MOQs for startups and established brands alike.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>Regulatory &amp; Compliance</h3>
+        <p>Complete PIF (Product Information File) documentation. We handle regulatory paperwork for EU, ASEAN, and other markets.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌿</div>
+        <h3>Green &amp; Sustainable</h3>
+        <p>Renewable energy adoption, carbon inventory tracking, and botanical ingredient upgrades. Building toward circular beauty manufacturing.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>IP &amp; Character Licensing</h3>
+        <p>Experienced in producing co-branded products with licensed characters — from packaging design coordination to compliant manufacturing.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌡️</div>
+        <h3>Climate-Proof Formulas</h3>
+        <p>Specialized in products that maintain stability, texture, and efficacy in tropical and subtropical environments — a critical edge for global markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Categories -->
+<section>
+  <div class="container">
+    <div class="section-label">Product Portfolio</div>
+    <div class="section-title">Categories We Cover</div>
+    <div class="section-text">
+      We develop and manufacture across major beauty and personal care categories, with particular depth in products that demand superior stability and skin compatibility.
+    </div>
+    <div class="product-tags">
+      <span class="product-tag">Moisturizers &amp; Serums</span>
+      <span class="product-tag">Sunscreen &amp; UV Protection</span>
+      <span class="product-tag">BB &amp; CC Creams</span>
+      <span class="product-tag">Foundation &amp; Base Makeup</span>
+      <span class="product-tag">Cleansers &amp; Toners</span>
+      <span class="product-tag">Sheet Masks &amp; Wash-Off Masks</span>
+      <span class="product-tag">Body Care &amp; Lotions</span>
+      <span class="product-tag">Sensitive Skin Solutions</span>
+      <span class="product-tag">Anti-Aging Formulas</span>
+      <span class="product-tag">Men's Grooming</span>
+    </div>
+  </div>
+</section>
+
+<!-- What We're Looking For -->
+<section>
+  <div class="container">
+    <div class="section-label">Partnership Opportunities</div>
+    <div class="section-title">What We're Looking For</div>
+    <div class="section-text">
+      We're at this convention to connect with partners who can help us grow in the North American market — and whom we can help succeed with world-class manufacturing.
+    </div>
+    <div class="needs-grid">
+      <div class="need-item">
+        <div class="need-icon">🤝</div>
+        <div>
+          <h4>Brand Owners &amp; Entrepreneurs</h4>
+          <p>Looking to launch or expand a beauty line? We offer turnkey ODM — from formula to finished product, with flexible minimums.</p>
+        </div>
+      </div>
+      <div class="need-item">
+        <div class="need-icon">🏪</div>
+        <div>
+          <h4>Retail &amp; Distribution Partners</h4>
+          <p>Retailers and distributors seeking high-quality, competitively priced beauty products for the US and Canadian markets.</p>
+        </div>
+      </div>
+      <div class="need-item">
+        <div class="need-icon">🌎</div>
+        <div>
+          <h4>Market Entry Advisors</h4>
+          <p>Consultants, trade professionals, or business connectors who can help a Taiwan manufacturer navigate the North American beauty landscape.</p>
+        </div>
+      </div>
+      <div class="need-item">
+        <div class="need-icon">🔬</div>
+        <div>
+          <h4>Ingredient &amp; Tech Partners</h4>
+          <p>Innovative raw material suppliers, sustainable packaging companies, or technology partners in the beauty supply chain.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Let's Build Something Together</h2>
+  <p>Whether you need a manufacturing partner, a custom formula, or a market-ready product line — we'd love to talk.</p>
+  <div class="contact-line">
+    Wayne Chen, CEO &amp; Owner<br>
+    IMEI Cosmetics (益美化工實業)<br>
+    <a href="mailto:wccnopenclaw@gmail.com">wccnopenclaw@gmail.com</a>
+  </div>
+</div>
+
+</body>
+</html>
