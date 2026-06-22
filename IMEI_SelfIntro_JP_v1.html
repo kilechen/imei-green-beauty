@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>益美化工（IMEI） ― 台湾発の化粧品フォーミュレーションパートナー</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest: #1a3a2a;
+    --green: #2d7a54;
+    --green-pale: #e8f5ef;
+    --gold: #c9a84c;
+    --gold-light: #faf3e0;
+    --text: #2c2c2c;
+    --text-mid: #555;
+    --text-light: #777;
+    --bg: #fafaf7;
+    --white: #ffffff;
+    --border: #e5e5e0;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    color: var(--text); background: var(--bg);
+    line-height: 1.9; font-size: 15px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 36px; background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+  }
+  nav .logo {
+    font-family: 'Noto Serif JP', serif; font-weight: 700;
+    font-size: 42px; color: var(--forest);
+  }
+  nav .nav-links { display: flex; gap: 22px; }
+  nav .nav-links a {
+    font-size: 13px; color: var(--text-mid); text-decoration: none;
+    letter-spacing: 0.5px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav .nav-links a:hover { color: var(--green); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--forest) 0%, #1e4a35 40%, var(--green) 100%);
+    color: var(--white); padding: 100px 40px 80px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-block; border: 1px solid rgba(255,255,255,0.25);
+    padding: 6px 22px; border-radius: 30px; font-size: 12px;
+    letter-spacing: 2px; margin-bottom: 28px; color: rgba(255,255,255,0.75);
+    font-family: 'Inter', sans-serif;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif; font-size: 42px; font-weight: 700;
+    line-height: 1.4; margin-bottom: 20px; max-width: 780px; margin-left: auto; margin-right: auto;
+  }
+  .hero h1 em { font-style: normal; color: var(--gold); }
+  .hero .subtitle {
+    font-size: 16px; max-width: 640px; margin: 0 auto; opacity: 0.88; line-height: 2;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 920px; margin: 0 auto; padding: 0 40px; }
+
+  /* ── SECTIONS ── */
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--green); font-weight: 600; margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif; font-size: 30px; font-weight: 700;
+    color: var(--forest); margin-bottom: 18px; line-height: 1.5;
+  }
+  .section-text {
+    font-size: 15px; color: var(--text-mid); max-width: 720px; line-height: 2; margin-bottom: 32px;
+  }
+
+  /* ── STATS ── */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0;
+  }
+  .stat {
+    text-align: center; padding: 28px 16px; background: var(--white);
+    border-radius: 14px; border: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: 'Inter', serif; font-size: 36px; font-weight: 700;
+    color: var(--green); line-height: 1;
+  }
+  .stat-label { font-size: 12px; color: var(--text-light); margin-top: 8px; }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;
+  }
+  .card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+    padding: 36px 30px; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover {
+    transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.07);
+  }
+  .card-icon {
+    width: 52px; height: 52px; border-radius: 14px; display: flex;
+    align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px;
+    background: var(--green-pale);
+  }
+  .card-icon.gold { background: var(--gold-light); }
+  .card h3 { font-size: 17px; font-weight: 600; color: var(--forest); margin-bottom: 8px; }
+  .card p { font-size: 14px; color: var(--text-mid); line-height: 1.85; }
+
+  /* ── PRODUCT TAGS ── */
+  .product-tags {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px;
+  }
+  .product-tag {
+    background: var(--green-pale); color: var(--green);
+    padding: 10px 20px; border-radius: 30px;
+    font-size: 14px; font-weight: 500;
+  }
+
+  /* ── NEEDS GRID ── */
+  .needs-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px;
+  }
+  .need-item {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 28px 24px; background: var(--white);
+    border-radius: 14px; border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .need-item:hover {
+    transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  }
+  .need-icon {
+    flex-shrink: 0; width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--green), var(--forest));
+    border-radius: 12px; display: flex; align-items: center;
+    justify-content: center; color: var(--white); font-size: 20px;
+  }
+  .need-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--forest); }
+  .need-item p { font-size: 14px; color: var(--text-mid); line-height: 1.85; }
+
+  /* ── CTA ── */
+  .cta {
+    background: linear-gradient(135deg, var(--forest), #2a5a45);
+    color: var(--white); text-align: center; padding: 64px 40px;
+  }
+  .cta h2 { font-family: 'Noto Serif JP', serif; font-size: 30px; margin-bottom: 16px; line-height: 1.5; }
+  .cta p { font-size: 15px; opacity: 0.88; margin-bottom: 8px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 2; }
+  .cta .contact { margin-top: 28px; font-size: 16px; font-weight: 500; line-height: 2; }
+  .cta .contact a { color: var(--gold); text-decoration: none; }
+  .cta .contact-sub { font-size: 13px; opacity: 0.7; margin-top: 4px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 12px 20px; }
+    nav .logo { font-size: 28px; }
+    nav .nav-links { gap: 14px; }
+    nav .nav-links a { font-size: 11px; }
+    .hero { padding: 60px 24px 50px; }
+    .hero h1 { font-size: 28px; }
+    .container { padding: 0 24px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .card-grid { grid-template-columns: 1fr; }
+    .needs-grid { grid-template-columns: 1fr; }
+    .product-tags { gap: 8px; }
+    .product-tag { font-size: 13px; padding: 8px 16px; }
+    .section-title { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">益美</div>
+  <div class="nav-links">
+    <a href="#about">会社紹介</a>
+    <a href="#capabilities">製造力</a>
+    <a href="#products">製品カテゴリ</a>
+    <a href="#partnership">パートナーシップ</a>
+    <a href="#contact">お問い合わせ</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">BNI TAIWAN 2026</div>
+  <h1>益美化工 ― <em>創業70年</em>の処方技術で<br>世界の美を支える</h1>
+  <p class="subtitle">スキンケア、日焼け止め、ベースメイク、パーソナルケアを専門とする台湾のODM/OBMパートナー。高温多湿環境で真価を発揮する処方設計が、私たちの強みです。</p>
+</div>
+
+<!-- WHO WE ARE -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">WHO WE ARE</div>
+    <div class="section-title">時代と共に進化する、ものづくり企業</div>
+    <div class="section-text">
+      益美化工（IMEI）は、70年以上にわたり化粧品の処方開発と製造を手がける台湾のビューティーメーカーです。ODMおよびOBMサービスを通じて、コンセプトの構築から完成品の出荷まで、ブランド様の製品づくりをワンストップでサポートいたします。高温多湿の亜熱帯環境における製品安定性、使用感、持続性に優れた処方設計を得意としており、グローバル市場で求められる品質基準を満たす製造力を備えております。
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">70+</div>
+        <div class="stat-label">年の歴史</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">名のチーム</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">開発処方数</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">GMP</div>
+        <div class="stat-label">認証取得工場</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE CAPABILITIES -->
+<section id="capabilities">
+  <div class="container">
+    <div class="section-label">CORE CAPABILITIES</div>
+    <div class="section-title">私たちの強み</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🧪</div>
+        <h3>カスタム処方開発</h3>
+        <p>スキンケア、日焼け止め、ベースメイク、パーソナルケアのオーダーメイドR&amp;D。高温多湿環境でも安定したパフォーマンスを発揮する処方を設計いたします。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏭</div>
+        <h3>フルスケール製造</h3>
+        <p>ラボスケールから量産ラインまで一貫対応。GMP認証取得の自社工場で、スタートアップから大手ブランド様まで柔軟なMOQでお応えいたします。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📋</div>
+        <h3>薬事・法規対応</h3>
+        <p>PIF（製品情報ファイル）の完全な文書作成に対応。EU、ASEAN、その他各国市場の薬事申請をサポートいたします。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold">🌿</div>
+        <h3>グリーン＆サステナブル</h3>
+        <p>再生可能エネルギーの導入、カーボンインベントリの実施、植物由来原料のアップグレード。サーキュラーエコノミーに向けた美容製造を推進しております。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold">🎨</div>
+        <h3>IPキャラクターライセンス</h3>
+        <p>ライセンスキャラクターとのコラボレーション製品の製造実績が豊富です。パッケージデザインの調整からコンプライアンスに準拠した製造まで対応いたします。</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌡️</div>
+        <h3>耐候性処方</h3>
+        <p>熱帯・亜熱帯環境でも安定性、テクスチャー、有効性を維持する製品設計を専門としています。グローバル展開において重要な差別化要素です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT CATEGORIES -->
+<section id="products">
+  <div class="container">
+    <div class="section-label">PRODUCT PORTFOLIO</div>
+    <div class="section-title">対応カテゴリ</div>
+    <div class="section-text">
+      美容およびパーソナルケアの主要カテゴリを幅広くカバーしております。特に、優れた安定性と肌適合性が求められる製品分野に深い知見を有しております。
+    </div>
+    <div class="product-tags">
+      <span class="product-tag">保湿クリーム・美容液</span>
+      <span class="product-tag">日焼け止め・UV対策</span>
+      <span class="product-tag">BB・CCクリーム</span>
+      <span class="product-tag">ファンデーション・ベースメイク</span>
+      <span class="product-tag">洗顔料・化粧水</span>
+      <span class="product-tag">シートマスク・洗い流すマスク</span>
+      <span class="product-tag">ボディケア・ローション</span>
+      <span class="product-tag">敏感肌向けソリューション</span>
+      <span class="product-tag">エイジングケア処方</span>
+      <span class="product-tag">メンズグルーミング</span>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIP OPPORTUNITIES -->
+<section id="partnership">
+  <div class="container">
+    <div class="section-label">PARTNERSHIP OPPORTUNITIES</div>
+    <div class="section-title">私たちが求めるパートナーシップ</div>
+    <div class="section-text">
+      益美化工は、日本市場をはじめとするグローバル展開を加速するため、共に成長できるパートナー様との出会いを大切にしております。ワールドクラスの製造力で、皆様のビジネスの成功をサポートいたします。
+    </div>
+    <div class="needs-grid">
+      <div class="need-item">
+        <div class="need-icon">🤝</div>
+        <div>
+          <h4>ブランドオーナー様・起業家様</h4>
+          <p>新しいビューティーラインの立ち上げや拡大をお考えですか。処方開発から完成品までのターンキーODMを、柔軟な最小ロットでご提供いたします。</p>
+        </div>
+      </div>
+      <div class="need-item">
+        <div class="need-icon">🏪</div>
+        <div>
+          <h4>小売・流通パートナー様</h4>
+          <p>高品質かつ競争力のある価格の美容製品をお求めの小売・流通企業様。日本市場およびアジア市場向けの製品ラインナップをご提案いたします。</p>
+        </div>
+      </div>
+      <div class="need-item">
+        <div class="need-icon">🌏</div>
+        <div>
+          <h4>市場参入アドバイザー様</h4>
+          <p>コンサルタント、貿易専門家、ビジネスコネクター。台湾メーカーのグローバル市場参入をサポートしていただけるパートナーを求めております。</p>
+        </div>
+      </div>
+      <div class="need-item">
+        <div class="need-icon">🔬</div>
+        <div>
+          <h4>原料・技術パートナー様</h4>
+          <p>革新的な原料サプライヤー、サステナブル包装企業、美容サプライチェーンにおける技術パートナーとの協業を歓迎いたします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta" id="contact">
+  <h2>共に、美の未来を<br>つくりましょう</h2>
+  <p>製造パートナーをお探しの方、カスタム処方をご希望の方、市場対応型の製品ラインを構築されたい方。ぜひお気軽にご相談ください。</p>
+  <div class="contact">
+    陳 威宙（Kile Chen）<br>
+    代表取締役 / 三代目オーナー<br>
+    益美化工實業股份有限公司（IMEI Chemical Enterprise Ltd.）<br>
+    台湾<br>
+    <a href="mailto:imei.kilechen@gmail.com">imei.kilechen@gmail.com</a>
+  </div>
+  <div class="contact-sub">BNI TAIWAN 2026</div>
+</div>
+
+</body>
+</html>
